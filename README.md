@@ -12,7 +12,7 @@
 | Osoba | Login GitHub/GitLab | Rola główna | Role dodatkowe |
 |---|---|---|---|
 | Imię Nazwisko | @login | Kierownik projektu | |
-| Imię Nazwisko | @login | Analityk wymagań | |
+| Igor Baran | @login | Analityk wymagań | |
 | Imię Nazwisko | @login | Architekt / projektant BD | |
 | Imię Nazwisko | @login | Projektant UX/UI | |
 | Imię Nazwisko | @login | QA / wdrożenie | |
