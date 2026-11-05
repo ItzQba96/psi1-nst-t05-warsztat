@@ -13,7 +13,7 @@
 |---|---|---|---|
 | Jakub Michalak | @login | Kierownik projektu | |
 | Igor Baran | @login | Analityk wymagań | |
-| Imię Nazwisko | @login | Architekt / projektant BD | |
+| Maciej Tkaczyk | @login | Architekt / projektant BD | |
 | Imię Nazwisko | @login | Projektant UX/UI | |
 | Imię Nazwisko | @login | QA / wdrożenie | |
 
