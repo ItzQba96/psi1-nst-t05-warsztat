@@ -12,7 +12,7 @@
 | Osoba | Login GitHub/GitLab | Rola główna | Role dodatkowe |
 |---|---|---|---|
 | Jakub Michalak | @login | Kierownik projektu | |
-| Igor Baran | @login | Analityk wymagań | |
+| Igor Baran | @KRIS9103 | Analityk wymagań | |
 | Maciej Tkaczyk | @login | Architekt / projektant BD | |
 | Kinga Miazga | @login | Projektant UX/UI | |
 | Imię Nazwisko | @login | QA / wdrożenie | |
