@@ -11,7 +11,7 @@
 
 | Osoba | Login GitHub/GitLab | Rola główna | Role dodatkowe |
 |---|---|---|---|
-| Imię Nazwisko | @login | Kierownik projektu | |
+| Jakub Michalak | @login | Kierownik projektu | |
 | Igor Baran | @login | Analityk wymagań | |
 | Imię Nazwisko | @login | Architekt / projektant BD | |
 | Imię Nazwisko | @login | Projektant UX/UI | |
