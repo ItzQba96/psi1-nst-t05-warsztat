@@ -14,7 +14,7 @@
 | Jakub Michalak | @login | Kierownik projektu | |
 | Igor Baran | @login | Analityk wymagań | |
 | Maciej Tkaczyk | @login | Architekt / projektant BD | |
-| Imię Nazwisko | @login | Projektant UX/UI | |
+| Kinga Miazga | @login | Projektant UX/UI | |
 | Imię Nazwisko | @login | QA / wdrożenie | |
 
 ### Macierz odpowiedzialności (RACI)
