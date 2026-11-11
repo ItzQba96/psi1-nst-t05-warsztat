@@ -2,7 +2,6 @@
 
 **System:** System zarządzania zleceniami napraw z modułem inteligentnych rekomendacji serwisowych (AI) dla niezależnego warsztatu samochodowego.
 
-> Słownik opracowano na podstawie dokumentu `01_wizja_i_zakres.md` przekazanego przez zespół oraz uwag prowadzącego. Przykłady mają charakter ilustracyjny. Nazwy statusów i zasady przejść między nimi są propozycją do potwierdzenia podczas wywiadu z klientem.
 
 <!--
 Zasady:
@@ -70,4 +69,3 @@ Zasady:
 6. Jakie informacje wolno przekazać zewnętrznemu dostawcy Asystenta AI i czy Mechanik ma obowiązek potwierdzić Rekomendację serwisową przed wykonaniem prac?
 7. Czy **Kierownik warsztatu** wykonuje także zadania recepcjonisty i czy istnieją inni pracownicy przyjmujący zlecenia?
 
-> **Uwaga dotycząca zakresu:** Słownik obejmuje pojęcia potrzebne do funkcji MVP. Integracja z hurtownią, system magazynowy, płatności online, fakturowanie i kalendarz wizyt pozostają poza MVP zgodnie z `01_wizja_i_zakres.md`. Nie oznacza to, że zewnętrzny dostawca AI lub bramka SMS zostały już wybrane.
