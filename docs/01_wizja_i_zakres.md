@@ -29,7 +29,7 @@
 | INT-06 | Dostawca części | Partner zewnętrzny | Możliwość przyszłej integracji katalogu części | Ś | N |
 
 ### Mapa interesariuszy
-
+MIEJSCE NA MAPE
 
 ## 1.4. Użytkownicy systemu (aktorzy)
 
