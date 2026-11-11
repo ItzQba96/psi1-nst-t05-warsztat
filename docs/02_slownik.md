@@ -2,70 +2,72 @@
 
 **System:** System zarządzania zleceniami napraw z modułem inteligentnych rekomendacji serwisowych (AI) dla niezależnego warsztatu samochodowego.
 
+Słownik określa nazwy używane w całej dokumentacji projektu. Synonimy służą jedynie do rozpoznawania innych określeń; w wymaganiach, diagramach i makietach należy używać nazw z pierwszej kolumny. Definicje oraz statusy wymagają potwierdzenia podczas wywiadu z klientem.
 
-<!--
-Zasady:
-- Jedno pojęcie, jedna nazwa. Synonimy wpisujemy w osobnej kolumnie i NIE używamy ich w dokumentacji.
-- Definicja w języku klienta, bez żargonu technicznego.
-- Nazwa angielska posłuży w cz. 2 jako nazwa klasy/tabeli.
-- Kolejność alfabetyczna.
--->
+## Pojęcia dziedzinowe
 
 | Pojęcie | Nazwa ang. (dla kodu) | Definicja | Synonimy (niezalecane) | Przykład | Powiązane pojęcia |
 |---|---|---|---|---|---|
-| Akceptacja kosztorysu | EstimateApproval | Potwierdzenie przez Klienta zgody na wykonanie prac objętych przedstawionym Kosztorysem. | zatwierdzenie wyceny, zgoda na naprawę | Klient akceptuje kosztorys o wartości 640 zł. | Klient, Kosztorys, Zlecenie naprawy |
-| Asystent AI | AIAdvisor | Funkcja wspierająca Mechanika przez przedstawianie możliwych przyczyn Usterki na podstawie opisu Objawów. Nie zastępuje decyzji Mechanika. | konsultant AI, chatbot diagnostyczny | Asystent AI wskazuje możliwe przyczyny trudności z uruchomieniem silnika. | Mechanik, Objaw usterki, Rekomendacja serwisowa, Usterka |
-| Część zamienna | SparePart | Element przeznaczony do wymiany lub montażu w Pojeździe podczas Naprawy. | część, podzespół | Filtr oleju wymieniony podczas naprawy. | Naprawa, Pojazd, Zużyta część |
-| Diagnoza | Diagnosis | Ustalenie przez Mechanika prawdopodobnej lub potwierdzonej przyczyny Usterki na podstawie objawów i sprawdzenia Pojazdu. | diagnostyka, rozpoznanie problemu | Mechanik ustala, że przyczyną braku rozruchu jest niesprawny akumulator. | Mechanik, Objaw usterki, Usterka, Rekomendacja serwisowa |
-| Historia napraw | RepairHistory | Zestaw informacji o wcześniejszych Zleceniach naprawy dotyczących danego Pojazdu. | karta napraw, archiwum serwisowe | W historii pojazdu widnieje wymiana hamulców w maju. | Pojazd, Zlecenie naprawy |
-| Kierownik warsztatu | WorkshopManager | Osoba odpowiedzialna za przyjmowanie Zleceń naprawy, przygotowanie Kosztorysów i organizację prac w warsztacie. | doradca serwisowy, recepcjonista | Kierownik przypisuje nowe zlecenie mechanikowi. | Kosztorys, Mechanik, Zlecenie naprawy |
-| Klient | Customer | Osoba lub podmiot zlecający warsztatowi wykonanie prac przy Pojeździe i podejmujący decyzję o akceptacji Kosztorysu. | zleceniodawca, kierowca, właściciel auta | Klient indywidualny zleca naprawę hamulców; klient flotowy zleca naprawę samochodu firmowego. | Akceptacja kosztorysu, Pojazd, Zlecenie naprawy |
-| Kosztorys | Estimate | Zestawienie planowanych prac, Części zamiennych oraz przewidywanych kosztów Naprawy, przedstawiane Klientowi do akceptacji. | wycena, kalkulacja naprawy | Kosztorys obejmuje wymianę tarcz i klocków za 640 zł. | Akceptacja kosztorysu, Część zamienna, Naprawa, Status kosztorysu |
-| Mechanik | Mechanic | Pracownik warsztatu wykonujący Diagnozę i Naprawę Pojazdu oraz zapisujący wykonane prace i Zużyte części. | serwisant, technik | Mechanik zapisuje wymianę filtra oleju w zleceniu. | Diagnoza, Naprawa, Zlecenie naprawy |
-| Naprawa | Repair | Prace wykonywane przy Pojeździe w celu usunięcia Usterki lub przywrócenia jego prawidłowego działania. | usługa serwisowa, czynność naprawcza | Wymiana uszkodzonego alternatora. | Część zamienna, Mechanik, Usterka, Zlecenie naprawy |
-| Objaw usterki | FaultSymptom | Zauważalna przez Klienta albo Mechanika oznaka nieprawidłowego działania Pojazdu, która pomaga w Diagnozie. | symptom, zgłoszony problem | Samochód nie uruchamia się przy niskiej temperaturze. | Asystent AI, Diagnoza, Usterka |
-| Odrzucenie kosztorysu | EstimateRejection | Decyzja Klienta o niewyrażeniu zgody na przedstawiony Kosztorys. Dalsze postępowanie ze Zleceniem naprawy wymaga ustalenia zasad warsztatu. | odmowa wyceny, brak zgody | Klient odrzuca kosztorys wymiany sprzęgła. | Klient, Kosztorys, Status kosztorysu, Zlecenie naprawy |
-| Pojazd | Vehicle | Samochód przyjęty do warsztatu w ramach Zlecenia naprawy, identyfikowany danymi umożliwiającymi odróżnienie go od innych pojazdów. | auto, samochód klienta | Samochód osobowy o podanym numerze rejestracyjnym. | Historia napraw, Klient, Zlecenie naprawy |
-| Powiadomienie | Notification | Wiadomość skierowana do Klienta w związku z Kosztorysem albo zmianą Statusu zlecenia. Może być przekazana e-mailem lub SMS-em. | alert, komunikat | SMS z informacją, że pojazd jest gotowy do odbioru. | Klient, Kosztorys, Status zlecenia |
-| Przypisanie zlecenia | RepairAssignment | Wskazanie Mechanika odpowiedzialnego za wykonanie prac w ramach konkretnego Zlecenia naprawy. | przydzielenie zadania, delegowanie naprawy | Kierownik przypisuje wymianę rozrządu mechanikowi. | Kierownik warsztatu, Mechanik, Zlecenie naprawy |
-| Rekomendacja serwisowa | ServiceRecommendation | Propozycja możliwej przyczyny Usterki lub kierunku dalszej Diagnozy przekazana Mechanikowi przez Asystenta AI. Wymaga oceny przez Mechanika. | podpowiedź AI, sugestia naprawy | Rekomendacja sprawdzenia akumulatora i połączeń elektrycznych. | Asystent AI, Diagnoza, Mechanik, Objaw usterki |
-| Status kosztorysu | EstimateStatus | Określenie etapu decyzji o Kosztorysie, pozwalające rozróżnić dokument przygotowywany, oczekujący na odpowiedź Klienta, zaakceptowany i odrzucony. | stan wyceny | OCZEKUJE_NA_AKCEPTACJE. | Akceptacja kosztorysu, Kosztorys, Odrzucenie kosztorysu |
-| Status zlecenia | RepairOrderStatus | Określenie aktualnego etapu obsługi Zlecenia naprawy, od przyjęcia Pojazdu do zakończenia obsługi. | stan naprawy, etap realizacji | W_TRAKCIE. | Powiadomienie, Zlecenie naprawy |
-| Usterka | Fault | Nieprawidłowość w działaniu Pojazdu, która jest przedmiotem Diagnozy i może wymagać Naprawy. | awaria, defekt | Niesprawny alternator powodujący brak ładowania akumulatora. | Diagnoza, Naprawa, Objaw usterki |
-| Wykonana praca | CompletedWork | Czynność naprawcza lub diagnostyczna faktycznie wykonana przez Mechanika i odnotowana przy Zleceniu naprawy. | robocizna, wykonana czynność | Wymiana klocków hamulcowych. | Mechanik, Naprawa, Zlecenie naprawy |
-| Zlecenie naprawy | RepairOrder | Zapis uzgodnionego z Klientem zakresu obsługi Pojazdu, łączący informacje o zgłoszonej Usterce, Kosztorysie, Mechaniku, przebiegu prac i Statusie zlecenia. | zgłoszenie serwisowe, karta zlecenia | Zlecenie wymiany hamulców w samochodzie klienta. | Klient, Kosztorys, Mechanik, Pojazd, Status zlecenia |
-| Zużyta część | UsedPart | Część zamienna rzeczywiście wykorzystana przy realizacji Zlecenia naprawy i zapisana w wykazie wykonanych prac. | rozchodowana część, zamontowany element | Dwa klocki hamulcowe odnotowane przy zleceniu. | Część zamienna, Naprawa, Zlecenie naprawy |
+| Akceptacja kosztorysu | EstimateApproval | Decyzja Klienta wyrażająca zgodę na wykonanie prac i poniesienie kosztów wskazanych w Kosztorysie. | zatwierdzenie wyceny, zgoda na naprawę | Klient akceptuje kosztorys na 640 zł. | Klient, Kosztorys, Zlecenie naprawy |
+| Asystent AI | AIAdvisor | Narzędzie przedstawiające Mechanikowi możliwe przyczyny Usterki na podstawie opisu Objawu usterki. Podpowiedź nie zastępuje Diagnozy Mechanika. | konsultant AI, chatbot diagnostyczny | Asystent AI sugeruje sprawdzenie akumulatora. | Diagnoza, Mechanik, Objaw usterki, Rekomendacja serwisowa |
+| Część zamienna | SparePart | Element, który może zostać użyty do naprawy Pojazdu. W systemie może występować w Kosztorysie lub w zapisie Zużytej części. | część, podzespół | Filtr oleju. | Kosztorys, Pojazd, Zużyta część |
+| Diagnoza | Diagnosis | Ustalenie przez Mechanika przyczyny Usterki na podstawie objawów i sprawdzenia Pojazdu. | diagnostyka, rozpoznanie usterki | Mechanik ustala, że przyczyną braku rozruchu jest akumulator. | Mechanik, Objaw usterki, Usterka |
+| Historia napraw | RepairHistory | Zestaw informacji o wcześniejszych Zleceniach naprawy danego Pojazdu. | archiwum napraw, karta napraw | Lista poprzednich wymian hamulców w samochodzie. | Pojazd, Zlecenie naprawy |
+| Kierownik warsztatu | WorkshopManager | Pracownik organizujący obsługę Zleceń naprawy, przygotowanie Kosztorysów i przydzielanie pracy Mechanikom. | recepcjonista, doradca serwisowy | Kierownik przydziela zlecenie mechanikowi. | Kosztorys, Mechanik, Przypisanie zlecenia |
+| Klient | Customer | Osoba lub firma zlecająca obsługę Pojazdu i uprawniona do podjęcia decyzji o Kosztorysie. | zleceniodawca, właściciel auta | Klient indywidualny lub firma posiadająca flotę. | Akceptacja kosztorysu, Pojazd, Zlecenie naprawy |
+| Kosztorys | Estimate | Zestawienie planowanych prac, Części zamiennych i przewidywanych kosztów Naprawy przedstawiane Klientowi do decyzji. | wycena, oferta naprawy | Wymiana klocków i tarcz hamulcowych za 640 zł. | Klient, Pozycja kosztorysu, Status kosztorysu |
+| Mechanik | Mechanic | Pracownik wykonujący Diagnozę i Naprawę oraz zapisujący Wykonane prace i Zużyte części. | serwisant, technik | Mechanik wymienia rozrusznik. | Diagnoza, Naprawa, Zlecenie naprawy |
+| Naprawa | Repair | Prace prowadzone przy Pojeździe w celu usunięcia Usterki lub przywrócenia prawidłowego działania. | usługa naprawcza | Wymiana uszkodzonego alternatora. | Mechanik, Usterka, Zlecenie naprawy |
+| Objaw usterki | FaultSymptom | Zauważalna przez Klienta lub Mechanika oznaka nieprawidłowego działania Pojazdu. | symptom, zgłoszony problem | Stuki w zawieszeniu podczas jazdy. | Asystent AI, Diagnoza, Usterka |
+| Odrzucenie kosztorysu | EstimateRejection | Decyzja Klienta oznaczająca brak zgody na przedstawiony Kosztorys. Nie oznacza automatycznie anulowania całego Zlecenia naprawy. | odmowa wyceny, brak zgody | Klient nie zgadza się na wymianę sprzęgła za wskazaną kwotę. | Klient, Kosztorys, Status kosztorysu |
+| Pojazd | Vehicle | Samochód, którego dotyczy Zlecenie naprawy. Jego dane pozwalają odróżnić go od innych samochodów obsługiwanych przez warsztat. | auto, karta pojazdu | Samochód o numerze rejestracyjnym WA 12345. | Historia napraw, Klient, Zlecenie naprawy |
+| Powiadomienie | Notification | Wiadomość do Klienta dotycząca Kosztorysu lub postępu Zlecenia naprawy. | komunikat, alert | E-mail z informacją o gotowości auta do odbioru. | Klient, Kosztorys, Status zlecenia |
+| Pozycja kosztorysu | EstimateItem | Pojedyncza pozycja Kosztorysu określająca planowaną pracę albo Część zamienną wraz z przewidywanym kosztem. | element wyceny, pozycja wyceny | Wymiana filtra oleju: robocizna 80 zł. | Część zamienna, Kosztorys, Robocizna |
+| Przypisanie zlecenia | RepairAssignment | Wskazanie Mechanika odpowiedzialnego za prace w ramach Zlecenia naprawy. | przydzielenie zadania | Kierownik przydziela mechanikowi naprawę hamulców. | Kierownik warsztatu, Mechanik, Zlecenie naprawy |
+| Rekomendacja serwisowa | ServiceRecommendation | Propozycja możliwej przyczyny Usterki lub dalszego sprawdzenia Pojazdu przedstawiona przez Asystenta AI. Ostatecznej oceny dokonuje Mechanik. | podpowiedź AI, sugestia diagnostyczna | Sprawdzenie napięcia akumulatora. | Asystent AI, Diagnoza, Mechanik |
+| Robocizna | LaborCost | Przewidywany koszt pracy Mechanika potrzebnej do wykonania czynności przy Pojeździe, wykazywany w Kosztorysie. | koszt pracy, RBG | Robocizna przy wymianie klocków: 120 zł. | Kosztorys, Pozycja kosztorysu |
+| Status kosztorysu | EstimateStatus | Informacja, czy Kosztorys jest przygotowywany, oczekuje na decyzję Klienta, został zaakceptowany czy odrzucony. | stan wyceny | ZAAKCEPTOWANY. | Kosztorys, Akceptacja kosztorysu, Odrzucenie kosztorysu |
+| Status zlecenia | RepairOrderStatus | Informacja o aktualnym etapie obsługi Zlecenia naprawy. | stan naprawy, etap zlecenia | W_TRAKCIE. | Zlecenie naprawy, Powiadomienie |
+| Usterka | Fault | Nieprawidłowość w działaniu Pojazdu, która wymaga Diagnozy i może wymagać Naprawy. | awaria, defekt | Uszkodzony alternator. | Diagnoza, Naprawa, Objaw usterki |
+| Wykonana praca | CompletedWork | Czynność diagnostyczna lub naprawcza faktycznie wykonana przez Mechanika i odnotowana w Zleceniu naprawy. | wykonana usługa, wykonana czynność | Wymiana tarcz hamulcowych. | Mechanik, Naprawa, Zlecenie naprawy |
+| Zlecenie naprawy | RepairOrder | Zapis obsługi danego Pojazdu obejmujący zgłoszony problem, Kosztorys, przypisane prace i aktualny Status zlecenia. | karta zlecenia, zgłoszenie naprawy | Zlecenie usunięcia usterki hamulców. | Klient, Kosztorys, Mechanik, Pojazd |
+| Zużyta część | UsedPart | Część zamienna rzeczywiście wykorzystana podczas Naprawy i zapisana przy Zleceniu naprawy. Nie oznacza prowadzenia pełnego magazynu części. | zamontowana część | Filtr oleju wykorzystany podczas przeglądu. | Część zamienna, Naprawa, Zlecenie naprawy |
 
 ## Wartości wyliczeniowe
+
+Poniższe statusy są **propozycją do potwierdzenia z klientem**. Wymagania i diagramy powinny używać dokładnie tych samych nazw po ich uzgodnieniu.
 
 ### Status zlecenia naprawy
 
 | Wartość | Znaczenie |
 |---|---|
-| PRZYJETE | Pojazd i zgłoszona Usterka zostały zarejestrowane w warsztacie. |
-| WYCENA | Kierownik warsztatu przygotowuje Kosztorys planowanych prac. |
-| OCZEKUJE_NA_AKCEPTACJE | Kosztorys przekazano Klientowi i warsztat oczekuje na jego decyzję. |
-| W_TRAKCIE | Prace przy Pojeździe są realizowane. |
-| GOTOWE_DO_ODBIORU | Prace zakończono, a Pojazd może zostać odebrany. |
-| WYDANE | Pojazd został przekazany Klientowi po obsłudze zlecenia. |
-| ANULOWANE | Zlecenie zakończono bez wykonania planowanej naprawy. Przyczyny i zasady anulowania wymagają potwierdzenia. |
+| PRZYJETE | Pojazd i zgłoszony problem zostały zarejestrowane. |
+| W_DIAGNOZIE | Mechanik sprawdza przyczynę zgłoszonego problemu. |
+| WYCENA | Kierownik przygotowuje Kosztorys. |
+| OCZEKUJE_NA_AKCEPTACJE | Kosztorys został przekazany Klientowi. |
+| W_TRAKCIE | Trwają zaakceptowane prace naprawcze. |
+| GOTOWE_DO_ODBIORU | Naprawa została zakończona i Pojazd może zostać odebrany. |
+| WYDANE | Pojazd został wydany Klientowi. |
+| ANULOWANE | Obsługę Zlecenia naprawy zakończono bez realizacji zaplanowanej Naprawy. |
 
 ### Status kosztorysu
 
 | Wartość | Znaczenie |
 |---|---|
-| ROBOCZY | Kosztorys jest przygotowywany i nie został jeszcze przekazany Klientowi. |
-| OCZEKUJE_NA_AKCEPTACJE | Kosztorys przekazano Klientowi, ale nie podjął on jeszcze decyzji. |
-| ZAAKCEPTOWANY | Klient wyraził zgodę na przedstawiony Kosztorys. |
-| ODRZUCONY | Klient nie wyraził zgody na przedstawiony Kosztorys. |
+| ROBOCZY | Kosztorys jest przygotowywany. |
+| OCZEKUJE_NA_AKCEPTACJE | Kosztorys wysłano Klientowi i czeka na decyzję. |
+| ZAAKCEPTOWANY | Klient zaakceptował Kosztorys. |
+| ODRZUCONY | Klient odrzucił Kosztorys. |
 
-## Kwestie do potwierdzenia podczas wywiadu z klientem
+## Do potwierdzenia z klientem
 
-1. Czy **Klient** obejmuje także firmę zarządzającą flotą, a jeśli tak, kto jest uprawniony do akceptacji Kosztorysu?
-2. Czy warsztat dopuszcza częściową akceptację Kosztorysu oraz jego zmianę po rozpoczęciu prac?
-3. Jakie są dokładne Statusy zlecenia i dozwolone przejścia między nimi, szczególnie po odrzuceniu Kosztorysu?
-4. Jakie dane identyfikujące **Pojazd** będą zapisywane (np. numer rejestracyjny, VIN)?
-5. Czy **Powiadomienie** ma być wysyłane SMS-em, e-mailem czy oboma kanałami?
-6. Jakie informacje wolno przekazać zewnętrznemu dostawcy Asystenta AI i czy Mechanik ma obowiązek potwierdzić Rekomendację serwisową przed wykonaniem prac?
-7. Czy **Kierownik warsztatu** wykonuje także zadania recepcjonisty i czy istnieją inni pracownicy przyjmujący zlecenia?
+1. Czy Klient może być firmą flotową i kto wtedy akceptuje Kosztorys?
+2. Co ma się stać ze Zleceniem naprawy po odrzuceniu Kosztorysu? Czy możliwa jest nowa wycena?
+3. Czy potrzebne są wszystkie proponowane Statusy zlecenia, w tym `W_DIAGNOZIE` i `WYCENA`?
+4. Jakie dane Pojazdu są konieczne (np. numer rejestracyjny, VIN, marka i model)?
+5. Czy Powiadomienia mają być wysyłane e-mailem, SMS-em czy oboma sposobami?
+6. Jakie dane wolno wysyłać do zewnętrznego Asystenta AI i kto odpowiada za weryfikację rekomendacji?
+7. Czy kierownik zarządza stanowiskami naprawczymi? Na razie nie ma takiej funkcji w potwierdzonym MVP.
+8. Czy Robocizna jest liczona według roboczogodzin, stawki za usługę czy w inny sposób?
 
+**Granice MVP:** Słownik nie zakłada pełnej gospodarki magazynowej, automatycznych zamówień u hurtowni, płatności online ani fakturowania. „Zużyta część” oznacza wyłącznie odnotowanie części wykorzystanej w naprawie. Integracja z katalogiem hurtowni i zarządzanie stanowiskami mogą zostać rozważone później, jeżeli klient potwierdzi taką potrzebę.

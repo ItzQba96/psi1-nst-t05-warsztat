@@ -40,7 +40,7 @@ Zrozumienie obecnych problemów w procesie przyjmowania i wyceny napraw w warszt
 
 ### E. Jakość, bezpieczeństwo, ograniczenia
 13. Po czym obiektywnie poznamy, że wdrożenie modułu AI do podpowiedzi diagnostycznych odniosło sukces? Jaki spadek czasu diagnozy uznają Państwo za zadowalający? (-> 1.2 CEL-02)
-14. Jaki jest Państwa zdaniem akceptowalny czas dla klienta na kliknięcie i odpowiedź na wysłany mu kosztorys, zanim wstrzyma to całkowicie pracę na danym stanowisku? (-> 1.2 CEL-01)
+14. Jaki jest zdaniem Państwa akceptowalny czas dla klienta na kliknięcie i odpowiedź na wysłany mu kosztorys, zanim wstrzyma to całkowicie pracę na danym stanowisku? (-> 1.2 CEL-01)
 15. Kto z pracowników powinien mieć dostęp do bazy numerów telefonów i adresów klientów, a komu ten dostęp powinien zostać zablokowany? (-> 1.7)
 
 ### F. Priorytety i kryteria odbioru
