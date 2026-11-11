@@ -21,13 +21,24 @@
 
 | ID | Interesariusz | Opis / rola | Oczekiwania wobec systemu | Wpływ (W/Ś/N) | Zainteresowanie (W/Ś/N) |
 |---|---|---|---|---|---|
-| INT-01 | | | | | |
+| INT-01 | Właściciel warsztatu | Inwestor i główny decydent | Wzrost przepustowości warsztatu, lepsza kontrola nad pracą i rentownością | W | W |
+| INT-02 | Kierownik warsztatu | Użytkownik codzienny | Szybkie tworzenie zleceń, kontrola obciążenia stanowisk, historia napraw | W | W |
+| INT-03 | Mechanik | Wykonawca napraw | Dostęp do zleceń, podpowiedzi AI, rejestrowanie prac i części | Ś | W |
+| INT-04 | Klient | Zleceniodawca naprawy | Akceptacja kosztorysu online, informacje o postępie naprawy | N | W |
+| INT-05 | Administrator IT | Zewnętrzna obsługa techniczna | Stabilność systemu, łatwe wdrożenie i kopie zapasowe | Ś | N |
+| INT-06 | Dostawca części | Partner zewnętrzny | Możliwość przyszłej integracji katalogu części | Ś | N |
+
+### Mapa interesariuszy
+
 
 ## 1.4. Użytkownicy systemu (aktorzy)
 
 | Aktor | Kim jest | Jak często korzysta | Kompetencje cyfrowe |
 |---|---|---|---|
-| | | | |
+| Kierownik warsztatu | Osoba przyjmująca pojazdy, tworząca zlecenia i kosztorysy | Codziennie, wielokrotnie | Średnie / wysokie |
+| Mechanik | Pracownik wykonujący diagnozy i naprawy | Codziennie | Niskie / średnie |
+| Klient | Osoba zlecająca naprawę i akceptująca kosztorys | Sporadycznie, kilka razy w roku | Zróżnicowane |
+
 
 ## 1.5. Zakres systemu
 
