@@ -13,9 +13,9 @@
 |---|---|---|---|
 | Jakub Michalak | @ItzQba96 | Kierownik projektu | |
 | Igor Baran | @KRIS9103 | Analityk wymagań | |
-| Maciej Tkaczyk | @maciej-afk | Architekt / projektant BD | |
+| Maciej Tkaczyk. | @maciej-afk | Architekt / projektant BD | |
 | Kinga Miazga | @n1ghtmare62 | Projektant UX/UI | |
-| Maciej Tkaczyk | @maciej-afk | QA / wdrożenie | |
+| Maciej Tkaczyk. | @maciej-afk | QA / wdrożenie | |
 
 ### Macierz odpowiedzialności (RACI)
 
