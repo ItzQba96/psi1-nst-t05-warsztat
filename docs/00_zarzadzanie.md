@@ -1,33 +1,26 @@
-# 00. Zarządzanie projektem
+# 00. Zarządzanie Projektem
 
-## Sposób pracy zespołu
+## Komunikacja i sposób pracy
+* **Główny kanał komunikacji:** Serwer Discord (kanał tekstowy i głosowy).
+* **Częstotliwość spotkań:** Raz w tygodniu (niedziela wieczór) spotkanie statusowe całego zespołu na Discordzie.
+* **Zarządzanie zadaniami:** GitHub Projects (tablica Kanban z kolumnami Todo, In Progress, Done).
+* **Repozytorium:** GitHub (włączona ochrona gałęzi `main`, wymagane 1 zatwierdzenie PR przed scaleniem).
 
-- Kanał komunikacji: [np. Discord / Teams / Signal]
-- Stałe spotkanie zespołu: [dzień, godzina, forma]
-- Tablica zadań: [link do GitHub Projects / GitLab Board]
-- Notatki ze spotkań: [`spotkania/`](spotkania/), jeden plik na spotkanie: `RRRR-MM-DD-krotki-opis.md`, np. `2026-11-14-wywiad-z-klientem.md` (uczestnicy, ustalenia, zadania z linkami do Issues)
-
-## Harmonogram semestru
-
-| Kamień | Termin oddania (tag) | Odpowiedzialny | Uwagi |
-|---|---|---|---|
-| M1 | | | |
-| M2 | | | |
-| M3 | | | |
-| M4 | | | |
-| v1.0 | | | |
+## Harmonogram (Kamienie Milowe)
+* **M1 (Zajęcia 2):** Zarządzanie, wizja i zakres, słownik, przygotowanie pytań do wywiadu, ochrona gałęzi.
+* **M2 (Zajęcia 3):** Wymagania (WF, WNF, US), Reguły Biznesowe, diagram kontekstu C4.
+* **M3 (Zajęcia 4):** Procesy biznesowe (BPMN), przypadki użycia (UML), model danych (ERD), architektura, bezpieczeństwo.
+* **M4 (Zajęcia 5):** Makiety UX/UI (Figma), audyt całego repozytorium, oddanie ostatecznej dokumentacji.
 
 ## Rejestr ryzyk
+| ID | Nazwa ryzyka | Prawd. (1-5) | Wpływ (1-5) | PxW | Reakcja |
+|---|---|---|---|---|---|
+| R1 | Brak zaangażowania członka zespołu | 2 | 5 | 10 | PM przejmuje zadania krytyczne, eskalacja problemu do prowadzącego. |
+| R2 | Niezrozumienie specyfiki pracy mechaników | 3 | 4 | 12 | Dokładny wywiad z klientem, opieranie się na słowniku pojęć dziedzinowych. |
+| R3 | Błędy w scalaniu kodu (konflikty w Git) | 4 | 3 | 12 | Ścisłe przypisywanie zadań, praca na osobnych gałęziach (branchach), weryfikacja przez QA. |
+| R4 | Zbyt duży zakres przyjęty do MVP | 3 | 4 | 12 | Priorytetyzacja MoSCoW, asertywne odrzucenie funkcjonalności pobocznych na rzecz głównych. |
+| R5 | Niedostępność zewnętrznego API dla modułu AI | 2 | 4 | 8 | Zaprojektowanie mocka (zaślepki) symulującego odpowiedzi AI na etapie tworzenia makiet i architektury. |
 
-<!-- Prawdopodobieństwo i wpływ w skali 1–3. Ekspozycja = P × W. -->
-
-| ID | Ryzyko | P | W | P×W | Reakcja (unikanie / łagodzenie / akceptacja) | Właściciel | Status |
-|---|---|---|---|---|---|---|---|
-| RYZ-01 | Członek zespołu nie wywiązuje się z zadań | 2 | 3 | 6 | Cotygodniowy przegląd tablicy, wczesna eskalacja do prowadzącego | PM | otwarte |
-| RYZ-02 | | | | | | | |
-
-## Dziennik decyzji zespołu
-
-| Data | Decyzja | Kto podjął |
-|---|---|---|
-| | | |
+## Dziennik decyzji
+* **Wybór platformy repozytorium:** Wybrano GitHuba ze względu na wbudowane mechanizmy Pull Requestów, intuicyjną tablicę Issues oraz darmową ochronę gałęzi dla repozytoriów publicznych.
+* **Wybór narzędzia do makiet:** Wybrano Figmę ze względu na możliwości współdzielenia projektu i łatwego udostępniania linku w dokumentacji.

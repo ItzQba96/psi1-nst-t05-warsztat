@@ -1,72 +1,56 @@
-# 01. Wizja i zakres systemu
+# 01. Wizja i Zakres Systemu
 
-## 1.1. Opis problemu
-
-| | |
+## 1.1 Problem biznesowy
+| Element | Opis |
 |---|---|
-| **Problem** | [na czym polega problem] |
-| **dotyczy** | [kogo dotyczy] |
-| **skutkiem jest** | [jakie są skutki problemu] |
-| **dobre rozwiązanie** | [jakie korzyści da system] |
+| **Problem** | Zbyt długi czas oczekiwania na diagnozę pojazdu, przedłużające się akceptacje wycen oraz konflikty o ostateczny koszt naprawy. |
+| **Kogo dotyczy** | Kierownika warsztatu, mechaników, klientów warsztatu. |
+| **Skutki** | Blokowanie stanowisk naprawczych (podnośników), przestoje w pracy mechaników, niezadowolenie klientów zaskoczonych ceną. |
+| **Rozwiązanie** | Wdrożenie systemu zarządzania zleceniami z asystentem AI wspierającym diagnozę usterek oraz z systemem elektronicznych kosztorysów dla klientów. |
 
-## 1.2. Cel biznesowy i mierniki sukcesu
+## 1.2 Cele biznesowe SMART
+* **CEL-01:** Skrócenie średniego czasu od wystawienia kosztorysu do jego akceptacji przez klienta z obecnych 4 godzin do maksymalnie 30 minut, w ciągu 3 miesięcy od wdrożenia systemu.
+* **CEL-02:** Skrócenie czasu diagnozowania usterek przez mechaników o średnio 20% dzięki wsparciu konsultanta AI, mierzone po miesiącu od uruchomienia platformy.
 
-<!-- Cele mierzalne (SMART), np. „skrócenie czasu obsługi rezerwacji z 10 do 3 minut”. -->
-
-| ID | Cel | Miernik | Wartość docelowa |
+## 1.3 Interesariusze
+| Interesariusz | Wpływ | Zainteresowanie | Opis / Rola w projekcie |
 |---|---|---|---|
-| CEL-01 | | | |
+| Właściciel (Klient) | Wysoki | Wysokie | Płaci za system, oczekuje zwrotu z inwestycji i usprawnienia procesów w warsztacie. |
+| Kierownik Warsztatu | Wysoki | Wysokie | Główny użytkownik biurowy, zarządza zleceniami, przydziela pracę mechanikom. |
+| Mechanik | Średni | Wysokie | Użytkownik warsztatowy, oczekuje uproszczenia pracy i czytelnego interfejsu przy stanowisku. |
+| Klient Warsztatu | Niski | Wysokie | Nie używa bezpośrednio systemu, ale otrzymuje linki do kosztorysów. Chce szybko poznać cenę. |
+| Dostawca API AI | Średni | Niskie | Podmiot zewnętrzny zapewniający silnik wnioskujący dla konsultanta diagnostycznego. |
+| Urząd Skarbowy | Wysoki | Niskie | Wymaga zgodności fakturowania z prawem (moduł księgowy świadomie wyrzucony poza MVP). |
 
-## 1.3. Interesariusze
+## 1.4 Aktorzy bezpośredni
+1. **Kierownik Warsztatu** – kompetencje cyfrowe: średnie. Korzysta z systemu na komputerze w biurze. Tworzy zlecenia i przypisuje pojazdy.
+2. **Mechanik** – kompetencje cyfrowe: podstawowe. Korzysta z systemu na tablecie/telefonie przy podnośniku. Opisuje objawy i tworzy listę części do wymiany.
+3. **Klient Warsztatu** – kompetencje cyfrowe: zróżnicowane. Otwiera link z SMS/e-mail w przeglądarce mobilnej, aby zaakceptować lub odrzucić kosztorys.
 
-| ID | Interesariusz | Opis / rola | Oczekiwania wobec systemu | Wpływ (W/Ś/N) | Zainteresowanie (W/Ś/N) |
-|---|---|---|---|---|---|
-| INT-01 | Właściciel warsztatu | Inwestor i główny decydent | Wzrost przepustowości warsztatu, lepsza kontrola nad pracą i rentownością | W | W |
-| INT-02 | Kierownik warsztatu | Użytkownik codzienny | Szybkie tworzenie zleceń, kontrola obciążenia stanowisk, historia napraw | W | W |
-| INT-03 | Mechanik | Wykonawca napraw | Dostęp do zleceń, podpowiedzi AI, rejestrowanie prac i części | Ś | W |
-| INT-04 | Klient | Zleceniodawca naprawy | Akceptacja kosztorysu online, informacje o postępie naprawy | N | W |
-| INT-05 | Administrator IT | Zewnętrzna obsługa techniczna | Stabilność systemu, łatwe wdrożenie i kopie zapasowe | Ś | N |
-| INT-06 | Dostawca części | Partner zewnętrzny | Możliwość przyszłej integracji katalogu części | Ś | N |
+## 1.5 Zakres MVP (Co robimy)
+* Zarządzanie flotą i klientami (rejestracja pojazdu, przypisanie do klienta).
+* Tworzenie zlecenia naprawy i przypisanie go do konkretnego mechanika.
+* Generowanie interaktywnego kosztorysu (części + robocizna).
+* Zewnętrzny, unikalny link dla klienta z przyciskami "Akceptuj" / "Odrzuć".
+* Konsultant AI: wpisywanie objawów usterki i otrzymywanie listy prawdopodobnych przyczyn.
 
-### Mapa interesariuszy
-MIEJSCE NA MAPE
+### Poza zakresem (Czego NIE robimy w MVP)
+* Pełny system księgowy (wystawianie faktur VAT, integracja z KSeF).
+* Obsługa bramek płatności online (Przelewy24, PayU, Blik) za naprawy.
+* Zaawansowany moduł magazynowy z automatycznym zamawianiem części.
 
-## 1.4. Użytkownicy systemu (aktorzy)
+## 1.6 Systemy zewnętrzne
+* **Bramka powiadomień (SMS/e-mail):** Do wysyłania klientom linków z wyceną do akceptacji.
+* **API modułu AI (np. OpenAI / dedykowany model):** Do analizy wprowadzonych przez mechanika objawów.
+* **API hurtowni motoryzacyjnej (np. Inter Cars / Auto Partner):** Do pobierania aktualnych cen części zamiennych do kosztorysu.
 
-| Aktor | Kim jest | Jak często korzysta | Kompetencje cyfrowe |
+## 1.7 Założenia biznesowe i ograniczenia
+* Warsztat dysponuje stabilnym łączem Wi-Fi pokrywającym hale naprawcze (konieczne do działania tabletów).
+* Klienci warsztatu posiadają smartfony z dostępem do internetu, co umożliwia im kliknięcie w link do wyceny.
+* Ze względu na warunki warsztatowe, interfejs dla mechanika musi obsługiwać responsywność (RWD), posiadać duże elementy klikalne i obsługiwać tryb ciemny.
+
+## 1.8 Analiza istniejących rozwiązań
+| Rozwiązanie | Plusy | Minusy | Wnioski dla naszego systemu |
 |---|---|---|---|
-| Kierownik warsztatu | Osoba przyjmująca pojazdy, tworząca zlecenia i kosztorysy | Codziennie, wielokrotnie | Średnie / wysokie |
-| Mechanik | Pracownik wykonujący diagnozy i naprawy | Codziennie | Niskie / średnie |
-| Klient | Osoba zlecająca naprawę i akceptująca kosztorys | Sporadycznie, kilka razy w roku | Zróżnicowane |
-
-
-## 1.5. Zakres systemu
-
-### W zakresie (MVP — realizacja w cz. 2)
-
-- [moduł / obszar funkcjonalny]
-
-### Poza zakresem (świadomie wyłączone)
-
-- [czego system NIE robi, np. płatności online, aplikacja mobilna natywna]
-
-### Możliwe rozszerzenia (po MVP)
-
--
-
-## 1.6. Kontekst i systemy zewnętrzne
-
-<!-- Z jakimi systemami zewnętrznymi system współpracuje (poczta e-mail, bramka płatności, mapy, logowanie przez Google…)? -->
-
-## 1.7. Założenia i ograniczenia
-
-| Typ | Opis |
-|---|---|
-| Założenie | np. użytkownicy mają dostęp do Internetu i przeglądarki |
-| Ograniczenie | np. budżet: wyłącznie darmowe/otwarte technologie; realizacja w 1 semestr przez zespół N-osobowy |
-
-## 1.8. Rozwiązania konkurencyjne / analiza istniejących narzędzi
-
-| Rozwiązanie | Co robi dobrze | Czego brakuje | Wniosek dla naszego projektu |
-|---|---|---|---|
-| | | | |
+| **Tradycyjny zeszyt + telefon** | Niezawodność, brak konieczności szkoleń. | Brak spójnej historii napraw, notoryczne zapominanie o pozycjach na rachunku, blokowanie pracy przez czekanie na decyzję klienta. | Konieczność wyeliminowania papieru przy jednoczesnym zachowaniu intuicyjności. Proces akceptacji musi być asynchroniczny (link). |
+| **Gotowe systemy klasy "Asystent Warsztatu"** | Rozbudowane zarządzanie magazynem i zintegrowane fakturowanie. | Przeładowanie funkcjami, wysoki próg wejścia dla mechaników, brak asystentów AI do diagnozy. | Nasz system MVP skupi się na innowacji (moduł AI) oraz prostocie kosztorysowania, odrzucając skomplikowane i nieużywane w małych warsztatach moduły magazynowe. |
