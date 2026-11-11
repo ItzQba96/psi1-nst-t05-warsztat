@@ -1,7 +1,7 @@
 # [Nazwa systemu]
 
 > Projekt zespołowy systemu informatycznego, cz. 1 (dokumentacja), semestr zimowy 2026/27, studia niestacjonarne.
-> Temat nr **[XX]**: [tytuł tematu z listy]
+> Temat nr **[05]**: [Warsztat samochodowy: zlecenia napraw]
 
 ## O systemie
 
@@ -15,7 +15,7 @@
 | Igor Baran | @KRIS9103 | Analityk wymagań | |
 | Maciej Tkaczyk | @maciej-afk | Architekt / projektant BD | |
 | Kinga Miazga | @n1ghtmare62 | Projektant UX/UI | |
-| Imię Nazwisko | @login | QA / wdrożenie | |
+| Maciej Tkaczyk | @maciej-afk | QA / wdrożenie | |
 
 ### Macierz odpowiedzialności (RACI)
 
@@ -25,8 +25,8 @@
 
 | Nr | Dokument | Właściciel | Status |
 |---|---|---|---|
-| 00 | [Zarządzanie projektem](docs/00_zarzadzanie.md) | | ⬜ |
-| 01 | [Wizja i zakres](docs/01_wizja_i_zakres.md) | | ⬜ |
+| 00 | [Zarządzanie projektem](docs/00_zarzadzanie.md) | | 🟨 |
+| 01 | [Wizja i zakres](docs/01_wizja_i_zakres.md) | | 🟨 |
 | 02 | [Słownik pojęć](docs/02_slownik.md) | | ⬜ |
 | 03 | [Wymagania](docs/03_wymagania.md) | | ⬜ |
 | 04 | [Procesy i przypadki użycia](docs/04_procesy_i_przypadki_uzycia.md) | | ⬜ |
@@ -45,8 +45,8 @@ Statusy: ⬜ nie rozpoczęto · 🟨 w trakcie · 🟩 gotowe do recenzji · ✅
 
 | Tag | Zawartość | Termin | Oddano |
 |---|---|---|---|
-| `m1` | repozytorium i tablica zadań, zespół i RACI, wizja i zakres, interesariusze, rejestr ryzyk, wstępny słownik, ćwiczenie git, pytania do wywiadu | | |
-| `m2` | słownik, wymagania WF/WNF z MoSCoW, reguły biznesowe, historyjki z kryteriami akceptacji, C4 kontekst, protokół wywiadu, aktualizacja zakresu | | |
+| `m1` | repozytorium i tablica zadań, zespół i RACI, wizja i zakres, interesariusze, rejestr ryzyk, wstępny słownik, ćwiczenie git, pytania do wywiadu | 18.10.2026 | |
+| `m2` | słownik, wymagania WF/WNF z MoSCoW, reguły biznesowe, historyjki z kryteriami akceptacji, C4 kontekst, protokół wywiadu, aktualizacja zakresu | 8.11.2026 | |
 | `m3` | UC, procesy, model dziedziny, ERD, architektura, ADR, bezpieczeństwo | | |
 | `m4` | UI, wdrożenie, testy, plan realizacji, macierz śledzenia | | |
 | `v1.0` | wersja końcowa | | |
